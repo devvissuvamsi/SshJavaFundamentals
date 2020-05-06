@@ -1,5 +1,6 @@
 package com.simplilearn.db.mongo;
 
+import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
@@ -37,9 +38,32 @@ public class HelloWorldMongoDBStyle {
 		//rootLogger.
 		
 		MongoClient mongoClient = new MongoClient(new ServerAddress("localhost", 27017));
-		DB db = mongoClient.getDB("first-test");
-		DBCollection collection = db.getCollection("users");
-		DBObject document = collection.findOne();
+		DB db = mongoClient.getDB("inventoryDbForJava");
+		DBCollection collection = db.getCollection("inventory");
+		
+		BasicDBObject document = new BasicDBObject();
+		document.put("name", "lokesh");
+		document.put("website", "howtodoinjava.com");
+		
+		BasicDBObject documentDetail = new BasicDBObject();
+		documentDetail.put("addressLine1", "Sweet Home");
+		documentDetail.put("addressLine2", "Karol Bagh");
+		documentDetail.put("addressLine3", "New Delhi, India");
+		 
+		document.put("address", documentDetail);
 		System.out.println(document);
+		
+		collection.insert(document);
+		
+		DBObject insertedDocument = collection.findOne();
+		
+		System.out.println("*****" + insertedDocument + "***********");
+		
+		
+		/*
+		 * DB db = mongoClient.getDB("first-test"); 
+		 * DBCollection collection =
+		 * db.getCollection("users"); DBObject document = collection.findOne();
+		 */
 	}
 }
