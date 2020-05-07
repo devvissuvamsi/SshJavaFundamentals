@@ -1,4 +1,4 @@
-package com.simplilearn.session.examples;
+package com.simplilearn.models.assignments.threads;
 
 public class OddEvenPrintMain {
 	 
@@ -17,7 +17,6 @@ public class OddEvenPrintMain {
 						wait();
 						System.out.println("Notified odd :" + count);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}

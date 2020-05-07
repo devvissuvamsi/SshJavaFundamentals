@@ -1,4 +1,4 @@
-package com.simplilearn.session.examples;
+package com.simplilearn.models.assignments.threads;
 
 public class PrintOddEvenMain {
 	public static void main(String[] args) {
