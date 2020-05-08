@@ -5,10 +5,10 @@ class ThreadB extends Thread {
 	int total = 0;
 	public void run() {
 		synchronized (this) {
-			System.out.println(this.currentThread().getName() + " Starts ");
+			System.out.println(this.currentThread().getName() + " Starts calculation");
 			for(int i=1;i<=100;i++) 
 				total += i;
-			System.out.println(this.currentThread().getName() + "Thread trying to give notification");
+			System.out.println(this.currentThread().getName() + " trying to give notification");
 			this.notify();
 		}
 	}
