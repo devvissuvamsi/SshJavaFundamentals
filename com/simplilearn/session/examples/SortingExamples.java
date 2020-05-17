@@ -5,6 +5,7 @@ import java.util.Arrays;
 import com.simplilearn.models.session.sortingalgo.BubbleSort;
 import com.simplilearn.models.session.sortingalgo.InsertionSort;
 import com.simplilearn.models.session.sortingalgo.MergeSort;
+import com.simplilearn.models.session.sortingalgo.QuickSort;
 import com.simplilearn.models.session.sortingalgo.SelectionSort;
 
 public class SortingExamples {
@@ -37,6 +38,13 @@ public class SortingExamples {
 		ms.sort(numbers3);
 		System.out.println("Merge Sort");
 		System.out.println(Arrays.toString(numbers3));
+		
+		
+		int[] numbers4 = {7,3,1,5,2};
+		QuickSort qs = new QuickSort();
+		qs.sort(numbers4,0,4);
+		System.out.println("Quick Sort");
+		System.out.println(Arrays.toString(numbers4));
 		
 	}
 
